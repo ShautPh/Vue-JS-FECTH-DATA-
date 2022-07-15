@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vue.JS Chapter 4 | Practice | exercise 1</title>
+  </head>
+
+  <body>
+    <div id="app">
+      Kilometers : <input type = "text" v-model="kilometer">
+      Meters : <input type = "text" v-model="meter">
+    </div>
+  </body>
+
+  <script src="https://unpkg.com/vue@next" ></script>
+  <script>
+    var app = Vue.createApp({
+      data() {
+        // YOUR CODE HERE
+        return{
+          kilometer: null ,
+          meter: null 
+        }
+      },
+      watch : {
+        // YOUR CODE HERE
+        kilometer(number){
+          this.meter = number*1000;
+        },
+        meter(number){
+          this.kilometer = number/1000;
+        }
+      }
+    })
+    app.mount("#app")
+  </script>
+  
+</html>
